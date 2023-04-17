@@ -1,0 +1,42 @@
+public class Solution {
+    public static void main(String[] args) {
+        int x= 1000021;
+        isPalindrome(x);
+    }
+    static boolean isPalindrome(int x){
+        boolean ans=true;
+        
+       if (x<0){
+           ans=false;
+       }
+       else{
+          String helper="";
+          char help;
+          int helping;
+        while (x>0){
+            helping = x%10;
+            x=(x-helping)/10;
+            help = (char) (helping+48);
+            helper = helper+help;
+        }
+        System.out.println(helper);
+        int lb=0,ub=helper.length()-1;
+        while(lb<ub){
+            char a=helper.charAt(lb);
+            char b=helper.charAt(ub);
+            lb++;
+            ub--;
+            System.out.println(a);
+            System.out.println(b);
+            
+            if((int)a!=(int)b){
+                ans = false;
+            }
+            
+        }
+        
+    }
+    return ans;
+}
+}
+
