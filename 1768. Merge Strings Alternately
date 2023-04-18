@@ -1,0 +1,22 @@
+class Solution {
+    public String mergeAlternately(String word1, String word2) {
+        String ans="";
+        
+        char helper;
+        int help = word1.length();
+        if (word2.length()> help ){
+            help = word2.length();
+        }
+        for (int i=0;i<help;i++){
+            if(i<word1.length()){
+                helper= word1.charAt(i);
+                ans = ans+helper;
+            }
+            if(i<word2.length()){
+                helper= word2.charAt(i);
+                ans = ans+helper;
+            }
+        }
+        return ans;
+    }
+}
