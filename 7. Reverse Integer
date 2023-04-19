@@ -1,0 +1,28 @@
+class Solution {
+    public int reverse(int x) {
+        boolean neg = false;
+        long ans=0;
+        if(x<0){
+            x = x *(-1);
+            neg = true;
+
+        }
+        while(x>0){
+            int helper = x%10;
+            x = (x-helper)/10;
+            ans = ans*10;
+            ans = ans+helper;
+
+        }
+        
+        if (neg){
+            ans = ans *(-1);
+        }//finalNum > Integer.MAX_VALUE || finalNum<Integer.MIN_VALUE
+        //if (ans > 2147483647|| ans < -2147483648
+        if (ans > Integer.MAX_VALUE|| ans < Integer.MIN_VALUE){
+            ans = 0;
+        }
+        int ans1 =(int) ans ;
+return ans1;
+    }
+}
