@@ -1,0 +1,18 @@
+class Solution {
+    public int search(int[] array, int key) {
+        int lb = 0;
+        int ub = array.length - 1;
+        while (lb <= ub) {
+            int m = (lb + ub) / 2;
+            if (array[m] == key) {
+                return m;
+            } else if (array[m] > key) {
+                ub = m - 1;
+            } else {
+
+                lb = m + 1;
+            }
+        }
+        return -1;
+    }
+}
