@@ -1,0 +1,20 @@
+class Solution {
+    public int numJewelsInStones(String jewels, String stones) {
+        int ans= 0;
+        for(int i=0; i< jewels.length() ; i++){
+            boolean sec=false;
+            for(int j=0;j<i;j++){
+                if (jewels.charAt(i)== jewels.charAt(j))
+                sec = true;
+            }
+            if (sec == false){
+                for (int j =0; j<stones.length();j++){
+                        if (stones.charAt(j)== jewels.charAt(i)){
+                            ans++;
+                        }
+                }
+            }
+        }
+        return ans;
+    }
+}
