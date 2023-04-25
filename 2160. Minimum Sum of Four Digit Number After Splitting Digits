@@ -1,0 +1,31 @@
+class Solution {
+    public int minimumSum(int num) {
+        
+        int [] numb = new int [4];
+        for (int i = 0 ; i< 4 ; i ++){
+        numb[i] =0;
+        }
+        for (int i = 0 ; i< 4 ; i ++){
+            numb[i]= num %10;
+            num= (num - numb[i]) /10;
+
+        }
+        int [] sort = new int [4];
+        int c=0;
+        for (int i = 0 ; i <10; i++ ){
+            for (int j = 0 ; j< 4 ; j ++){
+                if (numb[j]== i ){
+                    sort [c]= numb[j];
+                    c++;
+                    numb[j] = 99;
+                }
+
+            }
+
+        }
+        
+
+        return (((sort[0]*10)+sort[3]) + ((sort[1]*10)+sort[2]));
+        
+    }
+}
