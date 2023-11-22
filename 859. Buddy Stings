@@ -1,0 +1,57 @@
+class Solution {
+    public boolean buddyStrings(String s, String goal) {
+        boolean ans= false;
+        char helper_s=' ';
+        char helper_g=' ';
+        int j =0;
+        if (s.length()== goal.length()) {
+
+            for (int i =0; i< s.length();i++){
+                if (s.charAt(i)!=goal.charAt(i)){
+
+                    if(j == 0){
+                        helper_s = s.charAt(i);
+                        helper_g = goal.charAt(i);
+                    }
+                    if(j == 1){
+                        if (helper_g == s.charAt(i)&&helper_s == goal.charAt(i)){
+                            ans = true;
+                        }
+
+                    }
+                    if(j >1){
+                        ans=false;
+                    }
+                    j++;
+
+                
+
+                }
+            }
+
+
+
+
+    
+            if(j ==0){
+                for (int i =0; i<s.length();i++){
+                   
+                    
+                    for ( j =0; j<s.length();j++){
+                        if(i!=j){
+                            if(s.charAt(i) == goal.charAt(j)){
+                                ans = true;
+                            }
+
+                        }
+                     }
+            
+
+
+             }
+        
+            }
+        }
+        return ans ;
+    }
+}
